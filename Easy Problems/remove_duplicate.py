@@ -10,5 +10,4 @@ def removeDuplicates(nums):
     return i + 1
 
 nums = [1, 1, 2]
-
 print(removeDuplicates(nums))
