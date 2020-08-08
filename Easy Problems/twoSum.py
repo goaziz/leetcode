@@ -10,8 +10,9 @@ class Solution:
             else:
                 differenceMap[j] = i
 
+
 objects = Solution()
-nums = [2, 7, 11, 15]
-target = 9
+nums = [1, 2, 3, 1]
+target = 3
 
 print(objects.twoSum(nums, target))
