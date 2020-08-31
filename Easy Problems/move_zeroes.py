@@ -8,5 +8,5 @@ def moveZeroes(nums):
     return nums
 
 
-n = [0, 1, 0, 3, 12]
-print(moveZeroes(n))
+arr = ['a', 'b', None, 'c', 'd', 1, 1, 3, [], 1, 9, {}, 9, 0, 0, 0, False, 0, 0, 0, 0, 0, 0, 0]
+print(moveZeroes(arr))
