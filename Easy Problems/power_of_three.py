@@ -13,6 +13,5 @@ def isPowerOfThree(n):
     ### without using loop
     return (math.log10(n) / math.log10(3)) % 1 == 0
 
-
 n = 27
 print(isPowerOfThree(n))
