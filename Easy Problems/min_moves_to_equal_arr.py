@@ -1,0 +1,2 @@
+def minMoves(nums):
+    pass
