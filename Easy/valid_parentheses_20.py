@@ -37,8 +37,6 @@ class Solution2:
             if i in brackets:
                 stack.append(i)
             else:
-                if len(stack) == 0:
-                    return False
-                elif i != brackets[stack.pop()]:
+                if len(stack) == 0 or i != brackets[stack.pop()]:
                     return False
         return len(stack) == 0
