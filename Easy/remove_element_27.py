@@ -9,6 +9,7 @@ class Solution:
             if nums[i] == val:
                 del nums[i]
                 count += 1
+
         return n - count
 
     def removeElement2(self, nums: List[int], val: int) -> int:
@@ -18,8 +19,13 @@ class Solution:
                 nums[count] = nums[i]
                 count += 1
 
-        print(nums)
         return count
+
+    def removeElement3(self, nums: List[int], val: int) -> int:
+        while val in nums:
+            nums.remove(val)
+
+        return len(nums)
 
 
 obj = Solution()
