@@ -27,21 +27,19 @@ class Solution:
         for s in seen:
             return s
 
-    # under development
-    # def singleNumber4(self, nums: List[int]) -> int:
-    #     hashmap = {}
-    #     for i in nums:
-    #         if i in hashmap:
-    #             hashmap[i] += 1
-    #         else:
-    #             hashmap[i] = 1
-    #
-    #     print(hashmap.keys())
-    #     for val in hashmap.values():
-    #         if val == 1:
-    #             return hashmap[val]
+    def singleNumber4(self, nums: List[int]) -> int:
+        hashmap = {}
+        for i in nums:
+            if i in hashmap:
+                hashmap[i] += 1
+            else:
+                hashmap[i] = 1
+
+        for val, key in hashmap.items():
+            if key == 1:
+                return val
 
 
 obj = Solution()
-nums = [1, 2, 1, 2, 3]
+nums = [1]
 print(obj.singleNumber4(nums))
