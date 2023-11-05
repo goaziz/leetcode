@@ -27,19 +27,19 @@ class Solution:
 
         return False
 
-    # def containsDuplicate3(self, nums: List[int]) -> bool:
-    # under development
-    #     hashmap = {}
-    #
-    #     for i in nums:
-    #         if i in hashmap:
-    #             if hashmap[i] > 1:
-    #                 return True
-    #         hashmap[i] += 1
-    #
-    #     return False
+    def containsDuplicate3(self, nums: List[int]) -> bool:
+
+        hashmap = {}
+
+        for i, j in enumerate(nums):
+            if j in hashmap:
+                return True
+
+            hashmap[j] = i
+
+        return False
 
 
 obj = Solution()
-nums = [1, 2, 3, 4]
+nums = [1, 2, 3, 4, 3]
 print(obj.containsDuplicate3(nums))
