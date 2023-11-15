@@ -5,6 +5,10 @@
 #          otherwise return 0
 # def guess(num: int) -> int:
 
+def guess(n):
+    pass
+
+
 class Solution:
     def guessNumber(self, n: int) -> int:
         left = 1
