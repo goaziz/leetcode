@@ -5,7 +5,6 @@ from typing import List
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
         nums = sorted(set(nums), reverse=True)
-        print(set([1, 2, 2, 5, 3, 5]))
 
         if len(nums) < 3:
             return nums[0]
