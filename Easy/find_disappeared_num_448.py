@@ -42,7 +42,6 @@ class Solution:
 
         # Response array that would contain the missing numbers
         result = []
-        print(nums)
         # Iterate over the numbers from 1 to N and add all those
         # that have positive magnitude in the array
         for i in range(1, len(nums) + 1):
