@@ -18,6 +18,17 @@ class Solution:
 
         return max(l)
 
+    def findMaxConsecutiveOnes2(self, nums: List[int]) -> int:
+        max_count = count = 0
+        for num in nums:
+            if num == 1:
+                count += 1
+            else:
+                max_count = max(max_count, count)
+                count = 0
+
+        return max(max_count, count)
+
 
 obj = Solution()
 nums = [1, 0, 1, 1, 0, 1]
