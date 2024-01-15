@@ -9,6 +9,8 @@ class Solution:
         for symbol in symbols:
             paragraph = paragraph.replace(symbol, ' ')
 
+        # another version to normalize paragraph
+        # paragraph = ''.join([c.lower() if c.isalnum() else ' ' for c in paragraph])
         words = paragraph.lower().split()
         c = Counter(words)
         count = 0
