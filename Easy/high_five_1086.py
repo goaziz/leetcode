@@ -1,3 +1,5 @@
+from collections import defaultdict
+import heapq
 from typing import List
 
 
@@ -8,15 +10,15 @@ class Solution:
         hashmap = {}
 
         for i in range(len(items)):
-            if items[i][0] in hashmap:
+            score_id = items[i][0]
+            score = items[i][1]
+            if score_id in hashmap:
                 if count != 5:
-                    hashmap[items[i][0]] = hashmap.get(
-                        items[i][0], 0) + items[i][1]
+                    hashmap[score_id] = hashmap.get(score_id, 0) + score
                     count += 1
             else:
                 count = 0
-                hashmap[items[i][0]] = hashmap.get(
-                    items[i][0], 0) + items[i][1]
+                hashmap[score_id] = hashmap.get(score_id, 0) + score
                 count += 1
 
         result = []
@@ -24,6 +26,17 @@ class Solution:
             result.append([key, val // 5])
 
         return result[::-1]
+
+    def highFive2(self, items: List[List[int]]) -> List[List[int]]:
+        scores = defaultdict(list)
+        for _id, score in items:
+            heapq.heappush(scores[_id], score)
+            if len(scores[_id]) > 5:
+                heapq.heappop(scores[_id])
+        result = []
+        for _id, heap in scores.items():
+            result.append([_id, sum(heap) // 5])
+        return sorted(result)
 
 
 obj = Solution()
