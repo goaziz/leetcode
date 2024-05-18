@@ -37,5 +37,5 @@ class Solution:
 
 
 obj = Solution()
-n = 264
+n = 2642
 print(obj.countLargestGroup(n))
