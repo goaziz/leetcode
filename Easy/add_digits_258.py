@@ -27,4 +27,4 @@ class Solution:
 
 
 obj = Solution()
-print(obj.addDigits(0))
+print(obj.addDigits(12))
