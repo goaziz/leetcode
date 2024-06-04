@@ -13,6 +13,15 @@ class Solution:
 
         return count
 
+    def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
+        empty = numBottles
+
+        while empty >= numExchange:
+            numBottles += empty // numExchange
+            empty = empty % numExchange + empty // numExchange
+
+        return numBottles
+
 
 obj = Solution()
 numBottles = 9
