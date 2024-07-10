@@ -31,4 +31,4 @@ class Solution:
 obj = Solution()
 num = [2, 1, 5]
 k = 806
-print(obj.addToArrayForm2(num, k))
+print(obj.addToArrayForm(num, k))
