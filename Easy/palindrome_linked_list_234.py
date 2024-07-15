@@ -61,13 +61,23 @@ class Solution:
 
         return True
 
+    def isPalindrome2(self, head: Optional[ListNode]) -> bool:
+        arr = []
+        current = head
+
+        while current:
+            arr.append(current.val)
+            current = current.next
+
+        return arr == arr[::-1]
+
 
 obj = Solution()
 head = None
 head = obj.append(head, 1)
 head = obj.append(head, 2)
-head = obj.append(head, 3)
-head = obj.append(head, 4)
+head = obj.append(head, 2)
+head = obj.append(head, 1)
 obj.print_list(head)
 print()
-print(obj.isPalindrome(head))
+print(obj.isPalindrome2(head))
