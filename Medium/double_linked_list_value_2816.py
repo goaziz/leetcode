@@ -53,7 +53,7 @@ class Solution:
         new_head = None
         while stack or val != 0:
             new_head = ListNode(0, new_head)
-    
+
             if stack:
                 val += stack.pop() * 2
             new_head.val = val % 10
@@ -86,6 +86,27 @@ class Solution:
             previous.next = ListNode(carry)
 
         return self.reverse(head)
+
+    def doubleIt3(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        previous = None
+        current = head
+
+        while current:
+            twice_of_val = current.val * 2
+
+            if twice_of_val < 10:
+                current.val = twice_of_val
+            elif previous:
+                current.val = twice_of_val % 10
+                previous.val += 1
+            else:
+                head = ListNode(1, current)
+                current.val = twice_of_val % 10
+
+            previous = current
+            current = current.next
+
+        return head
 
     def print_list(self, head):
         current = head
