@@ -36,28 +36,29 @@ class Solution:
         return prev
 
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        head1 = self.reverse(l1)
-        head2 = self.reverse(l2)
-
         carry = 0
-        new_head = None
-        while head1 or head2 or carry != 0:
+        dummy = ListNode(0)
+        current = dummy
+
+        while l1 or l2 or carry != 0:
             val1 = 0
             val2 = 0
 
-            if head1:
-                val1 = head1.val
-                head1 = head1.next
+            if l1:
+                val1 = l1.val
+                l1 = l1.next
 
-            if head2:
-                val2 = head2.val
-                head2 = head2.next
+            if l2:
+                val2 = l2.val
+                l2 = l2.next
 
             s = (val1 + val2 + carry) % 10
             carry = (val1 + val2 + carry) // 10
-            new_head = ListNode(s, new_head)
+            new_head = ListNode(s)
+            current.next = new_head
+            current = current.next
 
-        return new_head
+        return dummy.next
 
     def print_list(self, head):
         while head:
