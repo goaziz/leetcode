@@ -27,7 +27,6 @@ class ProductOfNumbers2:
             self.nums.append(self.nums[-1] * num)
 
     def getProduct(self, k: int) -> int:
-        print(self.nums)
         if k >= len(self.nums):
             return 0
 
