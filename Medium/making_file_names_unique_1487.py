@@ -1,20 +1,30 @@
-from collections import Counter, defaultdict
-import re
 from typing import List
 
 
 class Solution:
-
-    def clean_name_and_get_number(self, name):
-        cleaned_name = re.sub(r'\(\d+\)', '', name).strip()
-        number = re.findall(r'\((\d+)\)', name)
-
-        return cleaned_name, int(number[0]) if number else 0
-
     def getFolderNames(self, names: List[str]) -> List[str]:
-        pass
+        freq = {}
+        result = []
+
+        for name in names:
+            if name not in freq:
+                freq[name] = 0
+                result.append(name)
+            else:
+                k = freq[name] + 1
+                new_name = f"{name}({k})"
+
+                while new_name in freq:
+                    k += 1
+                    new_name = f"{name}({k})"
+
+                freq[name] += 1
+                freq[new_name] = 0
+                result.append(new_name)
+
+        return result
 
 
 obj = Solution()
-names = ["onepiece", "onepiece(1)", "onepiece(2)", "onepiece(3)", "onepiece"]
+names = ["gta", "gta(1)", "gta", "avalon"]
 print(obj.getFolderNames(names))
