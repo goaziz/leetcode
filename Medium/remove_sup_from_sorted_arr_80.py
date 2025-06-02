@@ -38,4 +38,4 @@ class Solution:
 
 obj = Solution()
 nums = [1, 1, 1, 2, 2, 3]
-print(obj.removeDuplicates2(nums))
+print(obj.removeDuplicates(nums))
