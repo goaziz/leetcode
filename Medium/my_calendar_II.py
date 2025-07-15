@@ -7,7 +7,6 @@ class MyCalendarTwo:
     def book(self, startTime: int, endTime: int) -> bool:
         for os, oe in self.overlaps:
             if startTime < oe and endTime > os:
-                print(False)
                 return False
 
         for bs, be in self.booked:
@@ -18,7 +17,6 @@ class MyCalendarTwo:
                 self.overlaps.append((overlap_start, overlap_end))
 
         self.booked.append((startTime, endTime))
-        print(True)
         return True
 
 
